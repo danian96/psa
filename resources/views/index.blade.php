@@ -1480,7 +1480,7 @@
 
 
 			<!-- Parallax -->
-			<section class="parallax parallax-1" style="background-image: url('/images/34-min.jpg');">
+			<section class="parallax parallax-1" style="background-image: url('images/34-min.jpg');">
 				<div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
 
 				<div class="container">
