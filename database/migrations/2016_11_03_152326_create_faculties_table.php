@@ -17,6 +17,8 @@ class CreateFacultiesTable extends Migration
             $table->increments('id');
             $table->string('code');
             $table->string('name');
+            $table->integer('id_info')->unsigned();
+            $table->foreign('id_info')->references('id')->on('info');
             $table->timestamps();
         });
     }

@@ -19,10 +19,13 @@ class CreateQuestionsTable extends Migration
             $table->enum('questionType', ['OPENED', 'CLOSED']);
             $table->text('text');
             $table->integer('id_exam')->unsigned();
-            $table->primary(['id_exam','id']);
             $table->integer('id_area')->unsigned();
+            $table->integer('id_question')->unsigned();
+            $table->integer('id_management')->unsigned();
             $table->foreign('id_exam')->references('id')->on('exams');
             $table->foreign('id_area')->references('id')->on('areas');
+            $table->foreign('id_question')->references('id')->on('questions');
+            $table->foreign('id_management')->references('id')->on('managements');
             $table->timestamps();
         });
     }

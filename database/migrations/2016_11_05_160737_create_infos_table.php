@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateExamsTable extends Migration
+class CreateInfosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateExamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('exams', function (Blueprint $table) {
+        Schema::create('infos', function (Blueprint $table) {
             $table->increments('id');
             $table->date('date');
-            $table->integer('id_faculty')->unsigned();
-            $table->integer('id_candidate')->unsigned();
+            $table->string('title');
+            $table->enum('infoType', ['TEXT', 'IMAGE', 'DOCUMENT', 'VIDEO']);
+            $table->string('url');
+            $table->string('description');
             $table->timestamps();
-            $table->foreign('id_faculty')->references('id')->on('candidates');
-            $table->foreign('id_candidate')->references('id')->on('candidates');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateExamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('exams');
+        Schema::dropIfExists('infos');
     }
 }

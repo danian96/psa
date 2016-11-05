@@ -19,7 +19,7 @@ class CreateExamsanswerTable extends Migration
             $table->integer('id_question')->unsigned();
             $table->integer('id_option')->unsigned();
             $table->foreign('id_exam')->references('id')->on('exams');
-            $table->foreign(['id_question','id_exam'])->references(['id','id_exam'])->on('questions');
+            $table->foreign('id_question')->references('id')->on('questions');
             $table->foreign('id_option')->references('id')->on('options');
             $table->timestamps();
         });
