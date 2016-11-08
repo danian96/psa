@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOptionsTable extends Migration
+class CreateAdministratorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,13 @@ class CreateOptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('options', function (Blueprint $table) {
+        Schema::create('administrators', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code');
-            $table->string('text');
-            $table->string('image');
-            $table->boolean('answer');
 
-            $table->integer('id_question')->unsigned();
+            $table->integer('id_person')->unsigned();
 
-            $table->foreign('id_question')->references('id')->on('questions');
-            
+            $table->foreign('id_person')->references('id')->on('persons');
+
             $table->timestamps();
         });
     }
@@ -35,6 +31,6 @@ class CreateOptionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('options');
+        Schema::dropIfExists('administrators');
     }
 }
