@@ -15,12 +15,15 @@ class CreatePracticeanswersTable extends Migration
     {
         Schema::create('practiceanswers', function (Blueprint $table) {
             $table->increments('id');
+
             $table->integer('id_practice')->unsigned();
             $table->integer('id_question')->unsigned();
             $table->integer('id_option')->unsigned();
+            
             $table->foreign('id_practice')->references('id')->on('practices');
             $table->foreign('id_question')->references('id')->on('questions');
             $table->foreign('id_option')->references('id')->on('options');
+            
             $table->timestamps();
         });
     }

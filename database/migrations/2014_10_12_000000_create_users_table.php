@@ -17,10 +17,15 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('username')->unique();
             $table->string('password');
-            $table->integer('id_candidate')->unsigned();
+            $table->integer('state');
+            
+            $table->integer('id_person')->unsigned();
+
+            $table->foreign('id_person')->references('id')->on('persons');
+
             $table->rememberToken();
+
             $table->timestamps();
-            $table->foreign('id_candidate')->references('id')->on('candidates');
         });
     }
 

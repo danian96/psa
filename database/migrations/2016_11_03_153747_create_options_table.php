@@ -16,11 +16,14 @@ class CreateOptionsTable extends Migration
         Schema::create('options', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code');
-            $table->text('text');
+            $table->string('text');
             $table->string('image');
             $table->boolean('answer');
+
             $table->integer('id_question')->unsigned();
+
             $table->foreign('id_question')->references('id')->on('questions');
+            
             $table->timestamps();
         });
     }

@@ -16,9 +16,14 @@ class CreateManagementsTable extends Migration
         Schema::create('managements', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('year');
+            $table->integer('period');
             $table->integer('state');
-            $table->integer('id_info')->unsigned();
-            $table->foreign('id_info')->references('id')->on('info');
+            $table->string('name');
+
+            $table->integer('id_component')->unsigned();
+
+            $table->foreign('id_component')->references('id')->on('components');
+
             $table->timestamps();
         });
     }

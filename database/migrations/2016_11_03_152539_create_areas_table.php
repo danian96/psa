@@ -17,6 +17,11 @@ class CreateAreasTable extends Migration
             $table->increments('id');
             $table->string('code');
             $table->string('name');
+
+            $table->integer('id_component')->unsigned();
+
+            $table->foreign('id_component')->references('id')->on('component');
+
             $table->timestamps();
         });
     }

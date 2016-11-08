@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInfosTable extends Migration
+class CreateComponentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateInfosTable extends Migration
      */
     public function up()
     {
-        Schema::create('infos', function (Blueprint $table) {
+        Schema::create('components', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('date');
-            $table->string('title');
-            $table->enum('infoType', ['TEXT', 'IMAGE', 'DOCUMENT', 'VIDEO']);
-            $table->string('url');
-            $table->string('description');
+            $table->enum('typeComponent', ['FACULTY', 'CAREER', 'AREA', 'MANAGEMENT']);
 
             $table->timestamps();
         });
@@ -32,6 +28,6 @@ class CreateInfosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('infos');
+        Schema::dropIfExists('components');
     }
 }

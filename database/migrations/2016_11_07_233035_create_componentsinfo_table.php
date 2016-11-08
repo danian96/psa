@@ -15,6 +15,15 @@ class CreateComponentsinfoTable extends Migration
     {
         Schema::create('componentsinfo', function (Blueprint $table) {
             $table->increments('id');
+            $table->date('date');
+            $table->integer('state');
+
+            $table->integer('id_component')->unsigned();
+            $table->integer('id_info')->unsigned();
+
+            $table->foreign('id_component')->references('id')->on('components');
+            $table->foreign('id_info')->references('id')->on('infos');
+
             $table->timestamps();
         });
     }

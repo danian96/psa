@@ -15,6 +15,14 @@ class CreateCareerssubjectTable extends Migration
     {
         Schema::create('careerssubject', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('weighing');
+
+            $table->integer('id_career')->unsigned();
+            $table->integer('id_subject')->unsigned();
+
+            $table->foreign('id_career')->references('id')->on('careers');
+            $table->foreign('id_subject')->references('id')->on('subjects');
+
             $table->timestamps();
         });
     }

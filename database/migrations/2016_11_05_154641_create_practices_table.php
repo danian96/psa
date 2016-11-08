@@ -16,9 +16,12 @@ class CreatePracticesTable extends Migration
         Schema::create('practices', function (Blueprint $table) {
             $table->increments('id');
             $table->date('date');
-            $table->integer('id_area');
+
+            $table->integer('id_subject');
+
+            $table->foreign('id_subject')->references('id')->on('subjects');
+
             $table->timestamps();
-            $table->foreign('id_area')->references('id')->on('areas');
         });
     }
 

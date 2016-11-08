@@ -16,11 +16,14 @@ class CreateExamsTable extends Migration
         Schema::create('exams', function (Blueprint $table) {
             $table->increments('id');
             $table->date('date');
-            $table->integer('id_faculty')->unsigned();
+            
+            $table->integer('id_area')->unsigned();
             $table->integer('id_candidate')->unsigned();
-            $table->timestamps();
-            $table->foreign('id_faculty')->references('id')->on('candidates');
+
+            $table->foreign('id_area')->references('id')->on('areas');
             $table->foreign('id_candidate')->references('id')->on('candidates');
+
+            $table->timestamps();
         });
     }
 
