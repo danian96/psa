@@ -18,11 +18,11 @@ class CreateCareersTable extends Migration
             $table->string('code');
             $table->string('name');
             
-            $table->integer('id_faculty')->unsigned();
-            $table->integer('id_component')->unsigned();
+            $table->integer('faculty_id')->unsigned();
+            $table->integer('component_id')->unsigned();
 
-            $table->foreign('id_faculty')->references('id')->on('faculties');
-            $table->foreign('id_component')->references('id')->on('components');
+            $table->foreign('faculty_id')->references('id')->on('faculties');
+            $table->foreign('component_id')->references('id')->on('components');
 
             $table->timestamps();
         });

@@ -20,9 +20,9 @@ class CreateOptionsTable extends Migration
             $table->string('image');
             $table->boolean('answer');
 
-            $table->integer('id_question')->unsigned();
+            $table->integer('question_id')->unsigned();
 
-            $table->foreign('id_question')->references('id')->on('questions');
+            $table->foreign('question_id')->references('id')->on('questions');
             
             $table->timestamps();
         });

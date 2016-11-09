@@ -18,3 +18,10 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::resource('info','InfoController');
+Route::resource('area','AreaController');
+Route::resource('career','CareerController');
+Route::resource('component','ComponentController');
+Route::resource('componentinfo','ComponentInfoController');
+Route::resource('faculty','FacultyController');
+Route::resource('management','ManagementController');
+

@@ -20,13 +20,13 @@ class CreateQuestionsTable extends Migration
             $table->string('text');
             $table->string('image');
 
-            $table->integer('id_exam')->unsigned();
-            $table->integer('id_practice')->unsigned();
-            $table->integer('id_management')->unsigned();
+            $table->integer('exam_id')->unsigned();
+            $table->integer('practice_id')->unsigned();
+            $table->integer('management_id')->unsigned();
             
-            $table->foreign('id_exam')->references('id')->on('exams');
-            $table->foreign('id_practices')->references('id')->on('practices');
-            $table->foreign('id_management')->references('id')->on('managements');
+            $table->foreign('exam_id')->references('id')->on('exams');
+            $table->foreign('practice_id')->references('id')->on('practices');
+            $table->foreign('management_id')->references('id')->on('managements');
             
             $table->timestamps();
         });
