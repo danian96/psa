@@ -17,11 +17,11 @@ class CreateCareerssubjectTable extends Migration
             $table->increments('id');
             $table->integer('weighing');
 
-            $table->integer('id_career')->unsigned();
-            $table->integer('id_subject')->unsigned();
+            $table->integer('career_id')->unsigned();
+            $table->integer('subject_id')->unsigned();
 
-            $table->foreign('id_career')->references('id')->on('careers');
-            $table->foreign('id_subject')->references('id')->on('subjects');
+            $table->foreign('career_id')->references('id')->on('careers');
+            $table->foreign('subject_id')->references('id')->on('subjects');
 
             $table->timestamps();
         });

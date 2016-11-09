@@ -18,11 +18,11 @@ class CreateComponentsinfoTable extends Migration
             $table->date('date');
             $table->integer('state');
 
-            $table->integer('id_component')->unsigned();
-            $table->integer('id_info')->unsigned();
+            $table->integer('component_id')->unsigned();
+            $table->integer('info_id')->unsigned();
 
-            $table->foreign('id_component')->references('id')->on('components');
-            $table->foreign('id_info')->references('id')->on('infos');
+            $table->foreign('component_id')->references('id')->on('components');
+            $table->foreign('info_id')->references('id')->on('infos');
 
             $table->timestamps();
         });

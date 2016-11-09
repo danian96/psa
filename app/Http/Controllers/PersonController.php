@@ -13,7 +13,7 @@ class PersonController extends Controller
      */
     public function index()
     {
-        //
+        return \App\Person::all();
     }
 
     /**

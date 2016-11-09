@@ -20,9 +20,9 @@ class CreateManagementsTable extends Migration
             $table->integer('state');
             $table->string('name');
 
-            $table->integer('id_component')->unsigned();
+            $table->integer('component_id')->unsigned();
 
-            $table->foreign('id_component')->references('id')->on('components');
+            $table->foreign('component_id')->references('id')->on('components');
 
             $table->timestamps();
         });

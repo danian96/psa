@@ -17,11 +17,11 @@ class CreateExamsTable extends Migration
             $table->increments('id');
             $table->date('date');
             
-            $table->integer('id_area')->unsigned();
-            $table->integer('id_candidate')->unsigned();
+            $table->integer('area_id')->unsigned();
+            $table->integer('candidate_id')->unsigned();
 
-            $table->foreign('id_area')->references('id')->on('areas');
-            $table->foreign('id_candidate')->references('id')->on('candidates');
+            $table->foreign('area_id')->references('id')->on('areas');
+            $table->foreign('candidate_id')->references('id')->on('candidates');
 
             $table->timestamps();
         });

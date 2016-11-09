@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ManagementsTableSeeder extends Seeder
+class CandidatesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,9 +12,9 @@ class ManagementsTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('managements')->insert([
-            'year' => 2017,
-            'state' => 1,
-        ]);
+        foreach (range(1, 3) as $index) {
+            DB::table('candidates')->insert ([
+            ]);
+        }
     }
 }

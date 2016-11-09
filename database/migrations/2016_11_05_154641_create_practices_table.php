@@ -16,11 +16,8 @@ class CreatePracticesTable extends Migration
         Schema::create('practices', function (Blueprint $table) {
             $table->increments('id');
             $table->date('date');
-
-            $table->integer('id_subject')->unsigned();
-
-            $table->foreign('id_subject')->references('id')->on('subjects');
-
+            $table->integer('subject_id')->unsigned();
+            $table->foreign('subject_id')->references('id')->on('subjects');
             $table->timestamps();
         });
     }
