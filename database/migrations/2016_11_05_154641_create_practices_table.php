@@ -17,7 +17,7 @@ class CreatePracticesTable extends Migration
             $table->increments('id');
             $table->date('date');
 
-            $table->integer('id_subject');
+            $table->integer('id_subject')->unsigned();
 
             $table->foreign('id_subject')->references('id')->on('subjects');
 
