@@ -22,3 +22,12 @@ Route::get('/user', function (Request $request) {
 Route::resource('person','PersonController');
 
 Route::resource('candidate', 'CandidateController');
+
+Route::resource('component', 'ComponentController');
+
+Route::resource('area', 'AreaController');
+
+Route::resource('faculty', 'FacultyController');
+
+// No sirve
+Route::resource('faculties', 'MyController@index');

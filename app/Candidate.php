@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Candidate extends Model
 {
     //
-    protected  $table="cantidates";
+    protected  $table="candidates";
     protected $primayKey = 'id';
     protected $fillable = ['id','codes','name'];
 

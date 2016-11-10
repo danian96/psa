@@ -13,7 +13,7 @@ class ComponentController extends Controller
      */
     public function index()
     {
-        //
+        dd(\App\Component::all());
     }
 
     /**

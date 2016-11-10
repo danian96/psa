@@ -11,6 +11,10 @@ class AdministratorsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        foreach (range(1, 5) as $index) {
+            DB::table('administrators')->insert([
+                'person_id' => ($index * 2) - 1
+            ]);
+        }
     }
 }

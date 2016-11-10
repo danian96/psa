@@ -12,9 +12,22 @@ class CandidatesTableSeeder extends Seeder
     public function run()
     {
         //
-        foreach (range(1, 3) as $index) {
+
+        /*
+        foreach (range(1, 5) as $index) {
             DB::table('candidates')->insert ([
+                'person_id' => $index * 2
             ]);
         }
+        */
+
+        /*
+        foreach (range(11, 20) as $index) {
+            DB::table('candidates')->insert ([
+                'person_id' => $index
+            ]);
+        }
+        */
+
     }
 }

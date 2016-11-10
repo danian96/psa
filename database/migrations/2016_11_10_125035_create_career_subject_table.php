@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCareerssubjectTable extends Migration
+class CreateCareerSubjectTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCareerssubjectTable extends Migration
      */
     public function up()
     {
-        Schema::create('careerssubject', function (Blueprint $table) {
+        Schema::create('career_subject', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('weighing');
 
@@ -22,7 +22,7 @@ class CreateCareerssubjectTable extends Migration
 
             $table->foreign('career_id')->references('id')->on('careers');
             $table->foreign('subject_id')->references('id')->on('subjects');
-
+            
             $table->timestamps();
         });
     }
@@ -34,6 +34,6 @@ class CreateCareerssubjectTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('careerssubject');
+        Schema::dropIfExists('career_subject');
     }
 }

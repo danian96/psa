@@ -13,7 +13,7 @@ class CandidateController extends Controller
      */
     public function index()
     {
-        //
+        dd(\App\Candidate::all());
     }
 
     /**

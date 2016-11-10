@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateComponentsinfoTable extends Migration
+class CreateComponentInfoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateComponentsinfoTable extends Migration
      */
     public function up()
     {
-        Schema::create('componentsinfo', function (Blueprint $table) {
+        Schema::create('component_info', function (Blueprint $table) {
             $table->increments('id');
             $table->date('date');
             $table->integer('state');
@@ -35,6 +35,6 @@ class CreateComponentsinfoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('componentsinfo');
+        Schema::dropIfExists('component_info');
     }
 }

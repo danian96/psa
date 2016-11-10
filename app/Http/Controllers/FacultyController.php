@@ -13,7 +13,7 @@ class FacultyController extends Controller
      */
     public function index()
     {
-        //
+        dd(\App\Faculty::all());
     }
 
     /**
