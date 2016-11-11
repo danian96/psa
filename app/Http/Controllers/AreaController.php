@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Area;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
@@ -15,8 +16,8 @@ class AreaController extends Controller
     public function index()
     {
         //
-        $f = \App\Area::with('faculty')->findOrFail(1);
-        return new JsonResponse($f);
+        //$f = Area::with()->
+        //return new JsonResponse($f);
     }
 
     /**
@@ -44,11 +45,12 @@ class AreaController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return JsonResponse
      */
     public function show($id)
     {
-        //
+        $f = \App\Area::with('faculty')->findOrFail($id);
+        return new JsonResponse($f);
     }
 
     /**

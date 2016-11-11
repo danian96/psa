@@ -15,8 +15,7 @@ class FacultyController extends Controller
     public function index()
     {
         //
-        $f = \App\Faculty::with('career')->findOrFail(1);
-        return new JsonResponse($f);
+
 
 
     }
@@ -51,6 +50,8 @@ class FacultyController extends Controller
     public function show($id)
     {
         //
+        $f = \App\Faculty::with('career')->findOrFail($id);
+        return new JsonResponse($f);
     }
 
     /**

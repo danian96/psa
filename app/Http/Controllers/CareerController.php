@@ -14,7 +14,7 @@ class CareerController extends Controller
     public function index()
     {
         //
-        return \App\Career::all();
+        return \App\Career::paginate();
     }
 
     /**

@@ -14,7 +14,7 @@ class InfoController extends Controller
     public function index()
     {
         //
-        return \App\Info::all();
+        return \App\Info::paginate();
     }
 
     /**

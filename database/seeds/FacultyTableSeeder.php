@@ -11,7 +11,7 @@ class FacultyTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('faculties')->insert([
+        /*DB::table('faculties')->insert([
             'code' => '183',
             'name' => 'tecnologia',
             'component_id' => '4',
@@ -22,6 +22,12 @@ class FacultyTableSeeder extends Seeder
             'name' => 'ficct',
             'component_id' => '4',
             'area_id' => '2'
+        ]);*/
+        DB::table('faculties')->insert([
+            'code' => '189',
+            'name' => 'sdjjjjjjjjj',
+            'component_id' => '4',
+            'area_id' => '1'
         ]);
     }
 }
