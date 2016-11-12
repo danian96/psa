@@ -29,5 +29,6 @@ Route::resource('area', 'AreaController');
 
 Route::resource('faculty', 'FacultyController');
 
-// No sirve
-Route::resource('faculties', 'MyController@index');
+Route::resource('facultiesfromarea/{id}', 'MyController@facultiesfromarea');
+
+Route::resource('subjectsfromarea/{id}', 'MyController@subjectsfromarea');

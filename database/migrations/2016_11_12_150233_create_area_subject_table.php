@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQuestionsTable extends Migration
+class CreateAreaSubjectTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,23 +13,15 @@ class CreateQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('questions', function (Blueprint $table) {
+        Schema::create('area_subject', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code');
-            $table->enum('questionType', ['OPENED', 'CLOSED']);
-            $table->string('text');
-            $table->string('image');
-
-            $table->integer('practice_id')->unsigned();
-            $table->integer('management_id')->unsigned();
+            
             $table->integer('area_id')->unsigned();
             $table->integer('subject_id')->unsigned();
             
-            $table->foreign('practice_id')->references('id')->on('practices');
-            $table->foreign('management_id')->references('id')->on('managements');
             $table->foreign('area_id')->references('id')->on('areas');
             $table->foreign('subject_id')->references('id')->on('subjects');
-
+            
             $table->timestamps();
         });
     }
@@ -41,6 +33,6 @@ class CreateQuestionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questions');
+        Schema::dropIfExists('area_subject');
     }
 }
