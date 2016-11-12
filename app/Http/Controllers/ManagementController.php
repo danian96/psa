@@ -43,6 +43,8 @@ class ManagementController extends Controller
             ->select('infos.*')
             ->get();
         return new JsonResponse($infos);
+
+       //return \App\Management::paginate();
     }
 
     /**

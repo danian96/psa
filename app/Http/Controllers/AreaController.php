@@ -18,6 +18,7 @@ class AreaController extends Controller
         //
         //$f = Area::with()->
         //return new JsonResponse($f);
+        return \App\Area::all();
     }
 
     /**
@@ -34,11 +35,12 @@ class AreaController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function store(Request $request)
     {
         //
+
     }
 
     /**
