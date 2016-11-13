@@ -17,7 +17,7 @@ class CreateInfosTable extends Migration
             $table->increments('id');
             $table->date('date');
             $table->string('title');
-            $table->enum('infoType', ['TEXT', 'IMAGE', 'DOCUMENT', 'VIDEO']);
+            $table->enum('type', ['TEXT', 'IMAGE', 'DOCUMENT', 'VIDEO']);
             $table->string('url');
             $table->string('description');
 

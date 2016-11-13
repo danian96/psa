@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Psy\Util\Json;
 use Illuminate\Http\JsonResponse;
 
 class MyController extends Controller
@@ -14,7 +13,6 @@ class MyController extends Controller
     {
         $faculties = DB::table('faculties')
                     ->join('areas', 'faculties.area_id', '=', 'areas.id')
-                    //->leftjoin('components', 'faculties.component_id', '=', 'components.id')
                     ->where('areas.id', '=', $id)
                     ->select('faculties.*')
                     ->get();

@@ -20,6 +20,7 @@ class CreateFacultiesTable extends Migration
 
             $table->integer('component_id')->unsigned();
             $table->integer('area_id')->unsigned();
+
             $table->foreign('area_id')->references('id')->on('areas');
             $table->foreign('component_id')->references('id')->on('components');
             

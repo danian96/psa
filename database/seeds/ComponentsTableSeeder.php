@@ -14,23 +14,23 @@ class ComponentsTableSeeder extends Seeder
         //
         /*
         DB::table('components')->insert ([
-            'typeComponent' => 'AREA'
+            'type' => 'AREA'
         ]);
 
         foreach (range(1, 2) as $index) {
             DB::table('components')->insert ([
-                'typeComponent' => 'FACULTY'
+                'type' => 'FACULTY'
             ]);
         }
 
         foreach (range(1, 7) as $index) {
             DB::table('components')->insert ([
-                'typeComponent' => 'CAREER'
+                'type' => 'CAREER'
             ]);
         }
 
         DB::table('components')->insert ([
-            'typeComponent' => 'FACULTY'
+            'type' => 'FACULTY'
         ]);
         */
 

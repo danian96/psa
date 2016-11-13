@@ -19,9 +19,7 @@ class CandidatesTableSeeder extends Seeder
                 'person_id' => $index * 2
             ]);
         }
-        */
 
-        /*
         foreach (range(11, 20) as $index) {
             DB::table('candidates')->insert ([
                 'person_id' => $index

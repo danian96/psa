@@ -15,7 +15,7 @@ class CreateComponentsTable extends Migration
     {
         Schema::create('components', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('typeComponent', ['FACULTY', 'CAREER', 'AREA', 'MANAGEMENT']);
+            $table->enum('type', ['FACULTY', 'CAREER', 'AREA', 'MANAGEMENT']);
 
             $table->timestamps();
         });

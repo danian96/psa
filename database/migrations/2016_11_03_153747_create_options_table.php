@@ -17,7 +17,7 @@ class CreateOptionsTable extends Migration
             $table->increments('id');
             $table->string('code');
             $table->string('text');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->boolean('answer');
 
             $table->integer('question_id')->unsigned();
