@@ -32,6 +32,10 @@ class ComponentsTableSeeder extends Seeder
         DB::table('components')->insert ([
             'type' => 'FACULTY'
         ]);
+
+        DB::table('components')->insert ([
+            'type' => 'MANAGEMENT'
+        ]);
         */
 
     }

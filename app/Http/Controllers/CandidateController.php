@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Candidate;
 
 class CandidateController extends Controller
 {
@@ -13,7 +14,7 @@ class CandidateController extends Controller
      */
     public function index()
     {
-        dd(\App\Candidate::all());
+        dd(Candidate::all());
     }
 
     /**

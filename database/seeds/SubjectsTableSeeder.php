@@ -11,6 +11,7 @@ class SubjectsTableSeeder extends Seeder
      */
     public function run()
     {
+        /*
         DB::table('subjects')->insert([
             'code' => 'codmat',
             'name' => 'Matematicas'
@@ -60,6 +61,6 @@ class SubjectsTableSeeder extends Seeder
             'code' => 'codfil',
             'name' => 'Filosofia'
         ]);
-
+        */
     }
 }
