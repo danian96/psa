@@ -1,45 +1,37 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="Psa">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="BurgerPedia">
-    <meta name="author" content="Mifty Yusuf">
+    <meta charset="utf-8" />
+    <title>Smarty - Multipurpose + Admin</title>
+    <meta name="keywords" content="HTML5,CSS3,Template" />
+    <meta name="description" content="" />
+    <meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
 
-    <title>BurgerPedia - We've Got the Burgers</title>
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
-    <!-- Bootstrap core CSS -->
-    <link href="<?= asset('css/bootstrap.min.css') ?>" rel="stylesheet">
+    <!-- WEB FONTS : use %7C instead of | (pipe) -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
 
-    <!-- custom CSS for the page -->
+    <!-- CORE CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
+    <!-- REVOLUTION SLIDER -->
+    <link href="/css/extralayers.css" rel="stylesheet" type="text/css" />
+    <link href="/css/settings.css" rel="stylesheet" type="text/css" />
 
+    <!-- THEME CSS -->
+    <link href="css/essentials.css" rel="stylesheet" type="text/css" />
+    <link href="/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="/css/thematics-education.css" rel="stylesheet" type="text/css" />
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-
+    <!-- PAGE LEVEL SCRIPTS -->
+    <link href="/css/header-1.css" rel="stylesheet" type="text/css" />
+    <link href="/css/color_scheme/blue.css" rel="stylesheet" type="text/css" id="color_scheme" />
 </head>
 
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">BurgerPedia</a>
-        </div>
-    </div>
-</nav>
 
 <!-- MAIN CONTENT AND INJECTED VIEWS -->
 <div id="main">

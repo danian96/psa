@@ -1777,6 +1777,18 @@
 		<script type="text/javascript" src="js/jquery.themepunch.tools.min.js"></script>
 		<script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
 		<script type="text/javascript" src="js/demo.revolution_slider.js"></script>
+		<!-- Load Javascript Libraries (AngularJS, JQuery, Bootstrap) -->
+		<script src="<?= asset('js/angular/angular.min.js') ?>"></script>
+		<script src="<?= asset('js/angular/angular-route.min.js') ?>"></script>
+		<script src="<?= asset('js/jquery.min.js') ?>"></script>
+		<script src="<?= asset('js/bootstrap.min.js') ?>"></script>
+
+		<!-- AngularJS Application Scripts -->
+		<script src="<?= asset('app/app.module.js') ?>"></script>
+		<script src="<?= asset('app/home/prueba.controller.js') ?>"></script>
+
+
+
 
 	</body>
 </html>

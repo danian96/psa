@@ -9,11 +9,11 @@ Psa.controller('pruebaController', function pruebaController($scope, $http, $loc
     $http.get(constants.API_URL + "management", {params: { page: $scope.currentPage }})
         .success(function(response) {
 
-            console.log(response);
-            $scope.prueba = response.prueba;
-            $scope.prueba = response.current_page;
-            $scope.lastPage = response.last_page;
 
+            $scope.prueba = response;
+            //$scope.prueba = response.current_page;
+            $scope.lastPage = response.last_page;
+            console.log($scope.prueba);
             if($scope.currentPage >= $scope.lastPage){
                 $scope.loadMoreText='All Burgers Loaded!';
             }
