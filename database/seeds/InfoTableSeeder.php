@@ -12,7 +12,7 @@ class InfoTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('infos')->insert([
+        /*DB::table('infos')->insert([
             'date' => '2016-01-01',
             'title'=> 'procedimientos y fechas',
             'infoType' => 'DOCUMENT',
@@ -58,6 +58,13 @@ class InfoTableSeeder extends Seeder
             'infoType' => 'IMAGE',
             'url'=> '/documentos/plano.jpeg',
             'description' =>'plano ciudad universitaria'
+        ]);*/
+        DB::table('infos')->insert([
+            'date' => '2016-01-01',
+            'title'=> 'prueba',
+            'infoType' => 'DOCUMENT',
+            'url'=> '/documentos/jk.pdf',
+            'description' =>'prueba'
         ]);
     }
 }
