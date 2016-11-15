@@ -34,3 +34,5 @@ Route::get('/facultiesfromarea/{area}', 'MyController@facultiesfromarea');
 Route::get('subjectsfromarea/{area}', 'MyController@subjectsfromarea');
 
 Route::get('questionsfromarea/{area}', 'MyController@questionsfromarea');
+
+Route::get('questionsforexam/{area}', 'MyController@questionsforexam');
