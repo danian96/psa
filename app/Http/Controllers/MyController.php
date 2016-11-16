@@ -142,4 +142,31 @@ class MyController extends Controller
         //return $array;
         dd($array);
     }
+
+    public function questionsforexam($area_id) {
+        $questions_from_area = $this->questionsfromarea($area_id);
+        $array = array();
+
+        foreach ($questions_from_area as $questions_from_subject) {
+            $questions_array = array();
+            foreach (range(1, 10) as $i) {
+                $index = rand(0, count($questions_from_subject) - 1);
+                $question_id = $questions_from_subject[$index];
+                $question = \App\Question::find($question_id);
+                //echo('id : ');
+                //echo($question -> id);
+                //echo(' sub : ');
+                //echo($question -> subject_id);
+                //echo(' | ');
+                array_push($questions_array, $question);
+                unset($questions_from_subject[$index]);
+                $questions_from_subject = array_values($questions_from_subject);
+            }
+            //echo(' FIN ');
+            array_push($array, $questions_array);
+        }
+
+        //return $array;
+        dd($array);
+    }
 }
