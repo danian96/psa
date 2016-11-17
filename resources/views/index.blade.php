@@ -17,20 +17,20 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
 
 		<!-- CORE CSS -->
-		<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 
 		<!-- REVOLUTION SLIDER -->
-		<link href="/css/extralayers.css" rel="stylesheet" type="text/css" />
-		<link href="/css/settings.css" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('css/extralayers.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('css/settings.css') }}" rel="stylesheet" type="text/css" />
 
 		<!-- THEME CSS -->
-		<link href="css/essentials.css" rel="stylesheet" type="text/css" />
-		<link href="/css/layout.css" rel="stylesheet" type="text/css" />
-		<link href="/css/thematics-education.css" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('css/essentials.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('css/layout.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('css/thematics-education.css') }}" rel="stylesheet" type="text/css" />
 
 		<!-- PAGE LEVEL SCRIPTS -->
-		<link href="/css/header-1.css" rel="stylesheet" type="text/css" />
-		<link href="/css/color_scheme/blue.css" rel="stylesheet" type="text/css" id="color_scheme" />
+		<link href="{{ asset('css/header-1.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('css/color_scheme/blue.css') }}" rel="stylesheet" type="text/css" id="color_scheme" />
 	</head>
 
 	<!--
@@ -1771,7 +1771,7 @@
 		<script type="text/javascript" src="js/scripts.js"></script>
 
 		<!-- STYLESWITCHER - REMOVE -->
-		<script async type="text/javascript" src="/styleswitcher/styleswitcher.js"></script>
+		<script async type="text/javascript" src="<?= asset('styleswitcher/styleswitcher.js') ?>"></script>
 
 		<!-- REVOLUTION SLIDER -->
 		<script type="text/javascript" src="js/jquery.themepunch.tools.min.js"></script>
