@@ -11,14 +11,20 @@ var psaApp = angular.module('psaApp', [
 
 psaApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
-    when('/exam', {
-        templateUrl :   'partials/exam.html',
-        controller  :   'ExamController'
-    }).
 
     when('/', {
         templateUrl :   'partials/index.html',
         controller  :   'MainController'
+    }).
+
+    when('/selectarea', {
+        templateUrl :   'partials/selectarea.html',
+        controller  :   'SelectAreaController'
+    }).
+
+    when('/exam', {
+        templateUrl :   'partials/exam.html',
+        controller  :   'ExamController'
     }).
 
     when('/finished', {

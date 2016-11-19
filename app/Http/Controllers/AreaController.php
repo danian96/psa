@@ -13,7 +13,7 @@ class AreaController extends Controller
      */
     public function index()
     {
-        dd(\App\Area::all());
+        return \App\Area::all();
     }
 
     /**

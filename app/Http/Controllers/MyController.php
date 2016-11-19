@@ -17,16 +17,6 @@ class MyController extends Controller
                     ->select('faculties.*')
                     ->get();
 
-        /*
-        $n = count($faculties);
-
-        $array = array();
-        foreach ($faculties as $faculty) {
-            array_push($array, $faculty->id);
-        }
-        dd($array);
-        */
-
         return  new JsonResponse($faculties);
     }
 
@@ -107,58 +97,58 @@ class MyController extends Controller
 
         array_push($questions, $array0, $array1, $array2, $array3);
 
-        /*
-        $questions = $questions_subject_0
-            ->union($questions_subject_1)
-            ->union($questions_subject_2)
-            ->union($questions_subject_3);
-        */
         return $questions;
     }
 
     public function questionsforexam($area_id) {
         $questions_from_area = $this->questionsfromarea($area_id);
-        $array = array();
+
+        $questions_result = array();
+        $answers_result = array();
 
         foreach ($questions_from_area as $questions_from_subject) {
             $questions_array = array();
+            $answers_array = array();
             foreach (range(1, 10) as $i) {
                 $index = rand(0, count($questions_from_subject) - 1);
                 $question_id = $questions_from_subject[$index];
                 $question = \App\Question::find($question_id);
-                //echo('id : ');
-                //echo($question -> id);
-                //echo(' sub : ');
-                //echo($question -> subject_id);
-                //echo(' | ');
+                $answers = DB::table('answers')
+                    ->select('$answers.*')
+                    ->where('answers.question_id', '=', $question_id);
                 array_push($questions_array, $question);
+                array_push($answers_array, $answers);
                 unset($questions_from_subject[$index]);
                 $questions_from_subject = array_values($questions_from_subject);
             }
-            //echo(' FIN ');
-            array_push($array, $questions_array);
+            array_push($questions_result, $questions_array);
+            array_push($answers_result, $answers_array);
         }
 
-        //return $array;
+        $result = array();
 
-        $prueba = $this->answersforexam($array);
+        array_push($result, $questions_result);
+        array_push($result, $answers_result);
 
-        dd($array);
+        dd($result);
     }
 
-    public function answersforexam($questions_from_subject) {
+    public function answersforexam($questions) {
         $array = array();
-        foreach ($questions_from_subject as $questions) {
+        foreach ($questions as $questions_from_subject) {
             $answers_from_subject = array();
             foreach (range(0, 9) as $index) {
                 $options = DB::table('options')
-                    ->join('questions', 'options.question_id', '=', 'questions.id')
-                    ->where('questions.id', '=', $questions[$index]->id)
+                    ->where('options.question_id', '=', $questions[$index]->id)
                     ->get();
                 array_push($answers_from_subject, $options);
             }
             array_push($array, $answers_from_subject);
         }
         return $array;
+    }
+
+    public function getAllAreas() {
+        return \App\Area::all();
     }
 }
