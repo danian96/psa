@@ -130,7 +130,9 @@ class MyController extends Controller
         array_push($result, $questions_result);
         array_push($result, $answers_result);
 
-        dd($result);
+        //return $result;
+        //dd($result);
+        return new JsonResponse($result);
     }
 
     public function answersforexam($questions) {

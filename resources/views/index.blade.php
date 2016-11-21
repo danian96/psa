@@ -15,9 +15,16 @@
     <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
     <script src="bower_components/restangular/dist/restangular.min.js"></script>
 
-    <script src = "js/app.js"></script>
-    <script src = "js/controllers.js"></script>
-    <script src = "js/service.js"></script>
+    <!--
+    <script src = "../../public/js/app.js"></script>
+    <script src = "../../public/js/controllers.js"></script>
+    <script src = "../../public/js/services.js"></script>
+    -->
+
+    <script src = "/js/app.js"></script>
+    <script src = "/js/controllers.js"></script>
+    <script src = "/public/js/services.js"></script>
+
 
     <style>
 
@@ -36,10 +43,26 @@
             </div>
         </div>
 
+        <!---->
         <div ng-view></div>
+        <!---->
     </div>
 
+    <!-- MAIN CONTENT AND INJECTED VIEWS -->
+    <!--
+    <div id="main">
+        <!-- this is where content will be injected -->
+        <!--
+        <div ng-view></div>
+    </div>
+    -->
     <!--button /-->
+
+    <!-- Load Javascript Libraries (AngularJS, JQuery, Bootstrap) -->
+    <script src="<?= asset('js/angular/angular.min.js') ?>"></script>
+    <script src="<?= asset('js/angular/angular-route.min.js') ?>"></script>
+    <script src="<?= asset('js/jquery.min.js') ?>"></script>
+    <script src="<?= asset('js/bootstrap.min.js') ?>"></script>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

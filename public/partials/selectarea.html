@@ -1,15 +1,13 @@
 
-
-
 <div class="row">
     <div class="col-md-4 col-md-offset-4">
         <h2></h2>
         <p>Welcome! Use this form to select the area for your exam.</p>
 
-            <select class="form-control" name = "select">
+            <select class="form-control" id = "itemselect" ng-model = "selected">
                 <option ng-repeat = "area in areas" value = "{{area.id}}">{{area.name}}</option>
             </select>
 
-        <p><button type="button" class="btn btn-success form-control" ng-click="enter()">Start Exam!</button></p>
+        <p><p><button type="button" class="btn btn-success form-control" ng-click="enter()">Go to Exam!</button></p></p>
     </div>
 </div>

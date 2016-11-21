@@ -1,13 +1,12 @@
 
-
-
-
-
-
 var psaApp = angular.module('psaApp', [
     'ngRoute',
     'psaAppControllers'
 ]);
+
+psaApp.constant('constants', {
+    API_URL :   'http://localhost:8000/api/'
+});
 
 psaApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
@@ -22,7 +21,7 @@ psaApp.config(['$routeProvider', function($routeProvider) {
         controller  :   'SelectAreaController'
     }).
 
-    when('/exam', {
+    when('/exam/:areaID', {
         templateUrl :   'partials/exam.html',
         controller  :   'ExamController'
     }).
