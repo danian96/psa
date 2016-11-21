@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
 <!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
-<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<!--[if gt IE 9]><!-->	<html ng-app="Psa"> <!--<![endif]-->
 <head>
     <meta charset="utf-8" />
     <title>Smarty - Multipurpose + Admin</title>
@@ -1748,6 +1748,7 @@
     </footer>
     <!-- /FOOTER -->
 
+    <div ng-view></div>
 </div>
 <!-- /wrapper -->
 
@@ -1777,6 +1778,12 @@
 <script type="text/javascript" src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
 <script type="text/javascript" src="assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
 <script type="text/javascript" src="assets/js/view/demo.revolution_slider.js"></script>
+<script src="<?= asset('js/angular/angular.min.js') ?>"></script>
+<script src="<?= asset('js/angular/angular-route.min.js') ?>"></script>
+
+<!-- AngularJS Application Scripts -->
+<script src="<?= asset('app/app.module.js') ?>"></script>
+<script src="<?= asset('app/home/home.controller.js') ?>"></script>
 
 </body>
 </html>

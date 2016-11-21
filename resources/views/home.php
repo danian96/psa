@@ -54,7 +54,7 @@
     BACKGROUND IMAGE [together with .boxed class]
     data-background="assets/images/boxed_background/1.jpg"
 -->
-<body class="smoothscroll enable-animation">
+<body class="smoothscroll enable-animation" >
 
 <!-- SLIDE TOP -->
 <div id="slidetop">
@@ -138,14 +138,10 @@
                     <i class="fa fa-bars"></i>
                 </button>
 
-                <!-- BUTTONS -->
-                <ul class="pull-right nav nav-pills nav-second-main">
-                </ul>
-                <!-- /BUTTONS -->
 
 
                 <!-- Logo -->
-                <a class="logo pull-left" href="index.html">
+                <a class="logo pull-left" href="www.uagrm.edu.bo">
                     <img src="assets/images/uagrm.png" alt="" />
                 </a>
 
@@ -168,43 +164,39 @@
                                 <a href="#">HOME</a>
                             </li>
                         -->
-
                         <ul id="topMain" class="nav nav-pills nav-main">
                             <li class="dropdown active"><!-- HOME -->
                                 <a class="dropdown-toggle" href="#">
                                     UAGRM
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li class="dropdown">
-                                        <a class="dropdown-toggle" href="#">
-                                            RESEÑA HISTORICA
-                                        </a>
+                                    <li >
+                                        <a href="#/presentacion">PRESENTACION</a>
                                     </li>
-                                    <li class="dropdown">
-                                        <a class="dropdown-toggle" href="#">
-                                            MISION Y VISION DE LA UAGRM
-                                        </a>
+                                    <li >
+                                        <a href="#/reshistorica">RESEÑA HISTORICA</a>
                                     </li>
-                                    <li class="dropdown">
-                                        <a class="dropdown-toggle" href="#">
-                                            HIMNO UNIVERSITARIO
-                                        </a>
+                                    <li >
+                                        <a href="#/misionvision">MISION y VISION</a>
+                                    </li>
+                                    <li >
+                                        <a href="#/himno">HIMNO UNIVERSITARIO</a>
                                     </li>
                                     <li class="dropdown">
                                         <a class="dropdown-toggle" href="#">
                                             AUTORIDADES UNIVERSITARIAS
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="">RECTOR Y VICERECTOR</a></li>
-                                            <li><a href="">DECANOS Y VICEDECANOS</a></li>
-                                            <li><a href="">DIRECTORES DE CARRERA</a></li>
+                                            <li><a href="#/rector">RECTOR Y VICERECTOR</a></li>
+                                            <li><a href="#/decanos">DECANOS Y VICEDECANOS</a></li>
+                                            <li><a href="#/directores">DIRECTORES DE CARRERA</a></li>
 
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
                             <li class="dropdown"><!-- PAGES -->
-                                <a class="" href="#">
+                                <a class="#/infopsa" href="#">
                                     INFORMACION GENERAL PSA
                                 </a>
                             </li>
@@ -257,8 +249,10 @@
         <!-- /Top Nav -->
 
     </div>
+    <div>
+        <div ng-view></div>
+    </div>
 
-    <div ng-view></div>
 
 
 
@@ -284,25 +278,14 @@
 
 <script type="text/javascript" src="assets/js/scripts.js"></script>
 
-<!-- STYLESWITCHER - REMOVE -->
-<script async type="text/javascript" src="assets/plugins/styleswitcher/styleswitcher.js"></script>
-
-<!-- REVOLUTION SLIDER -->
-<script type="text/javascript" src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
-<script type="text/javascript" src="assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
-<script type="text/javascript" src="assets/js/view/demo.revolution_slider.js"></script>
 <!-- Load Javascript Libraries (AngularJS, JQuery, Bootstrap) -->
 <script src="<?= asset('js/angular/angular.min.js') ?>"></script>
 <script src="<?= asset('js/angular/angular-route.min.js') ?>"></script>
-<script src="<?= asset('js/jquery.min.js') ?>"></script>
-<script src="<?= asset('js/bootstrap.min.js') ?>"></script>
 
 <!-- AngularJS Application Scripts -->
 <script src="<?= asset('app/app.module.js') ?>"></script>
-<script src="<?= asset('app/home/prueba.controller.js') ?>"></script>
-
-
-
+<script src="<?= asset('app/home/home.controller.js') ?>"></script>
+<!--<script src="<?= asset('app/home/misionvision.controller.js') ?>"></script>-->
 
 </body>
 </html>

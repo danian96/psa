@@ -1,34 +1,32 @@
 /**
  * Created by root on 12-11-16.
  */
-// define the 'Burgerpedia' module
-// also include ngRoute for all our routing needs
+
 var Psa = angular.module('Psa', ['ngRoute']);
 
-// define our canstant for the API
 Psa.constant('constants', {
     API_URL: 'http://localhost:8000/api/'
 });
 
-// configure our routes
 Psa.config(function($routeProvider) {
     $routeProvider
-    // route for the hamburgers page
         .when('/', {
-            templateUrl : 'app/home/prueba.template.html',
-            controller  : 'pruebaController'
+            templateUrl : 'app/home/home.template.html',
+            controller  : 'homeController'
         })
-        /*
-        // route for a single hamburger
-        .when('/hamburger/:hamburgerID', {
-            templateUrl : 'app/hamburger/hamburger.template.htm',
-            controller  : 'hamburgerController'
-        })*/
 
-        // default route
+        .when('/misionvision', {
+            templateUrl : 'app/misionvision/misionvision.template.html',
+            controller  : 'misionvisionController'
+        })
+        .when('/presentacion', {
+            templateUrl : 'app/presentacion/presentacion.template.html',
+        })
+
         .otherwise({
             redirectTo: '/'
         });
 
 
 });
+angular.bootstrap(document.getElementById('Psa'), ['Psa']);
