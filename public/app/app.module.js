@@ -14,15 +14,22 @@ Psa.config(function($routeProvider) {
             templateUrl : 'app/home/home.template.html',
             controller  : 'homeController'
         })
-
-        .when('/misionvision', {
-            templateUrl : 'app/misionvision/misionvision.template.html',
-            controller  : 'misionvisionController'
-        })
         .when('/presentacion', {
             templateUrl : 'app/presentacion/presentacion.template.html',
         })
-
+        .when('/reshistorica', {
+            templateUrl : 'app/reshistorica/reshistorica.template.html',
+        })
+        .when('/misionvision', {
+            templateUrl : 'app/misionvision/misionvision.template.html',
+        })
+        .when('/himno', {
+            templateUrl : 'app/himno/himno.template.html',
+        })
+        .when('/infopsa', {
+            templateUrl : 'app/info/info.template.html',
+            controller  : 'infoController'
+        })
         .otherwise({
             redirectTo: '/'
         });

@@ -4,7 +4,6 @@
 <!--[if gt IE 9]><!-->	<html lang="es" ng-app="Psa"> <!--<![endif]-->
 <head>
     <meta charset="utf-8" />
-    <title>UAGRM PSA-2017</title>
     <meta name="keywords" content="HTML5,CSS3,Template" />
     <meta name="description" content="" />
     <meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
@@ -195,10 +194,8 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><!-- PAGES -->
-                                <a class="#/infopsa" href="#">
-                                    INFORMACION GENERAL PSA
-                                </a>
+                            <li >
+                                <a href="#/infopsa">INFORMACION GENERAL PSA</a>
                             </li>
                             <li class="dropdown"><!-- FEATURES -->
                                 <a class="dropdown-toggle" href="#">
@@ -284,8 +281,6 @@
 
 <!-- AngularJS Application Scripts -->
 <script src="<?= asset('app/app.module.js') ?>"></script>
-<script src="<?= asset('app/home/home.controller.js') ?>"></script>
-<!--<script src="<?= asset('app/home/misionvision.controller.js') ?>"></script>-->
-
+<script src="<?= asset('app/info/info.controller.js') ?>"></script>
 </body>
 </html>
