@@ -11,14 +11,14 @@ class ManagementsTableSeeder extends Seeder
      */
     public function run()
     {
-        /*
+
         DB::table('managements')->insert([
             'year'      =>  '2017',
             'period'    =>  '1',
             'state'     =>  '0',
             'name'      =>  'Management 1',
-            'component_id'  =>  '12'
+            'component_id'  =>  '1'
         ]);
-        */
+
     }
 }

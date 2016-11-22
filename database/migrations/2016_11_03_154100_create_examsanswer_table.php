@@ -18,7 +18,7 @@ class CreateExamsanswerTable extends Migration
             
             $table->integer('exam_id')->unsigned();
             $table->integer('question_id')->unsigned();
-            $table->integer('option_id')->unsigned();
+            $table->integer('option_id')->nullable()->unsigned();
 
             $table->foreign('exam_id')->references('id')->on('exams');
             $table->foreign('question_id')->references('id')->on('questions');

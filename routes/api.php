@@ -29,6 +29,8 @@ Route::resource('area', 'AreaController');
 
 Route::resource('faculty', 'FacultyController');
 
+Route::get('/optionsfromquestion/{id}', 'MyController@optionsfromquestion');
+
 Route::get('/areas', 'MyController@getAllAreas');
 
 Route::get('/facultiesfromarea/{area}', 'MyController@facultiesfromarea');

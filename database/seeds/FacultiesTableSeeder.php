@@ -12,28 +12,26 @@ class FacultiesTableSeeder extends Seeder
     public function run()
     {
 
-        /*
         DB::table('faculties')->insert([
             'code' => 'cf1',
             'name' => 'Tecnologia',
-            'component_id' => '2',
+            'component_id' => '7',
             'area_id' => '1'
         ]);
 
         DB::table('faculties')->insert([
             'code' => 'cf2',
             'name' => 'Politecnica',
-            'component_id' => '3',
+            'component_id' => '8',
             'area_id' => '1'
         ]);
 
         DB::table('faculties')->insert([
             'code' => 'cf3',
             'name' => 'Computacion',
-            'component_id' => '11',
-            'area_id' => '2'
+            'component_id' => '9',
+            'area_id' => '5'
         ]);
-        */
 
     }
 }

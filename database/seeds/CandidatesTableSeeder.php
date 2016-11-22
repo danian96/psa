@@ -13,7 +13,6 @@ class CandidatesTableSeeder extends Seeder
     {
         //
 
-        /*
         foreach (range(1, 5) as $index) {
             DB::table('candidates')->insert ([
                 'person_id' => $index * 2
@@ -25,7 +24,6 @@ class CandidatesTableSeeder extends Seeder
                 'person_id' => $index
             ]);
         }
-        */
 
     }
 }

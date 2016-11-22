@@ -113,9 +113,10 @@ class MyController extends Controller
                 $index = rand(0, count($questions_from_subject) - 1);
                 $question_id = $questions_from_subject[$index];
                 $question = \App\Question::find($question_id);
-                $answers = DB::table('answers')
-                    ->select('$answers.*')
-                    ->where('answers.question_id', '=', $question_id);
+                $answers = DB::table('options')
+                    ->select('options.*')
+                    ->where('options.question_id', '=', $question_id)
+                    ->get();
                 array_push($questions_array, $question);
                 array_push($answers_array, $answers);
                 unset($questions_from_subject[$index]);
@@ -130,8 +131,6 @@ class MyController extends Controller
         array_push($result, $questions_result);
         array_push($result, $answers_result);
 
-        //return $result;
-        //dd($result);
         return new JsonResponse($result);
     }
 
@@ -152,5 +151,13 @@ class MyController extends Controller
 
     public function getAllAreas() {
         return \App\Area::all();
+    }
+
+    public function optionsfromquestion($id) {
+        $answers = DB::table('options')
+            //->select('options.*')
+            ->where('options.question_id', '=', $id)
+            ->get();
+        return new JsonResponse($answers);
     }
 }

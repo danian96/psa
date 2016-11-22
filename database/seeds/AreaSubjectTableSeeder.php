@@ -22,13 +22,13 @@ class AreaSubjectTableSeeder extends Seeder
         //area 501
         foreach (range(1, 2) as $i) {
             DB::table('area_subject')->insert([
-                'area_id'   =>  '2',
+                'area_id'   =>  '5',
                 'subject_id'    =>  $i
             ]);
         }
         foreach (range(1, 2) as $i) {
             DB::table('area_subject')->insert([
-                'area_id'   =>  '2',
+                'area_id'   =>  '5',
                 'subject_id'    =>  ($i + 4)
             ]);
         }

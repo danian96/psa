@@ -22,7 +22,6 @@ class PersonsTableSeeder extends Seeder
         }
         */
 
-        /*
         DB::table('persons')->insert([
             'name' => 'Joaquin Chumacero Yupanqui',
             'ci' => '1000000'
@@ -122,7 +121,6 @@ class PersonsTableSeeder extends Seeder
             'name' => 'Estudiante 1000019',
             'ci' => '1000019'
         ]);
-        */
 
     }
 }

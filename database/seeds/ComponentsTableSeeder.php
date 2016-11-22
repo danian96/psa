@@ -12,12 +12,18 @@ class ComponentsTableSeeder extends Seeder
     public function run()
     {
         //
-        /*
+
         DB::table('components')->insert ([
-            'type' => 'AREA'
+            'type' => 'MANAGEMENT'
         ]);
 
-        foreach (range(1, 2) as $index) {
+        foreach (range(1, 5) as $index) {
+            DB::table('components')->insert([
+                'type' => 'AREA'
+            ]);
+        }
+
+        foreach (range(1, 3) as $index) {
             DB::table('components')->insert ([
                 'type' => 'FACULTY'
             ]);
@@ -29,14 +35,6 @@ class ComponentsTableSeeder extends Seeder
             ]);
         }
 
-        DB::table('components')->insert ([
-            'type' => 'FACULTY'
-        ]);
-
-        DB::table('components')->insert ([
-            'type' => 'MANAGEMENT'
-        ]);
-        */
 
     }
 }

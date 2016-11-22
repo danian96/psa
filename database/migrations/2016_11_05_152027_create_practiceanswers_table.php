@@ -18,7 +18,7 @@ class CreatePracticeanswersTable extends Migration
 
             $table->integer('practice_id')->unsigned();
             $table->integer('question_id')->unsigned();
-            $table->integer('option_id')->unsigned();
+            $table->integer('option_id')->nullable()->unsigned();
             
             $table->foreign('practice_id')->references('id')->on('practices');
             $table->foreign('question_id')->references('id')->on('questions');
