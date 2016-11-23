@@ -13,19 +13,19 @@ class ComponentTableSeeder extends Seeder
     {
         //
         DB::table('components')->insert([
-            'typeComponent' => 'MANAGEMENT'
+            'type' => 'MANAGEMENT'
         ]);
 
         DB::table('components')->insert([
-            'typeComponent' => 'AREA'
+            'type' => 'AREA'
         ]);
 
         DB::table('components')->insert([
-            'typeComponent' => 'FACULTY'
+            'type' => 'FACULTY'
         ]);
 
         DB::table('components')->insert([
-            'typeComponent' => 'CAREER'
+            'type' => 'CAREER'
         ]);
 
 

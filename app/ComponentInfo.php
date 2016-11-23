@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ComponentInfo extends Model
 {
     //
-    protected $table = "componentsinfo";
+    protected $table = "component_info";
     protected $primaryKey = 'id';
 
     public function component()

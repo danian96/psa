@@ -24,6 +24,7 @@
 
     <!-- THEME CSS -->
     <link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/fullscreen-modal.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/thematics-education.css" rel="stylesheet" type="text/css" />
 

@@ -12,10 +12,10 @@ class InfoTableSeeder extends Seeder
     public function run()
     {
         //
-        /*DB::table('infos')->insert([
+        DB::table('infos')->insert([
             'date' => '2016-01-01',
             'title'=> 'procedimientos y fechas',
-            'infoType' => 'DOCUMENT',
+            'type' => 'DOCUMENT',
             'url'=> '/documentos/procedimientos.pdf',
             'description' =>'procedimientos y fehcas psa'
         ]);
@@ -23,7 +23,7 @@ class InfoTableSeeder extends Seeder
         DB::table('infos')->insert([
             'date' => '2016-01-01',
             'title'=> 'requisitos',
-            'infoType' => 'DOCUMENT',
+            'type' => 'DOCUMENT',
             'url'=> '/documentos/requisitos.pdf',
             'description' =>'requisitos psa'
         ]);
@@ -31,7 +31,7 @@ class InfoTableSeeder extends Seeder
         DB::table('infos')->insert([
             'date' => '2016-01-01',
             'title'=> 'carreras ofertadas',
-            'infoType' => 'DOCUMENT',
+            'type' => 'DOCUMENT',
             'url'=> '/documentos/carrerasOfertadas.pdf',
             'description' =>'carreras ofertadas psa'
         ]);
@@ -39,7 +39,7 @@ class InfoTableSeeder extends Seeder
         DB::table('infos')->insert([
             'date' => '2016-01-01',
             'title'=> 'ponderaciones psa',
-            'infoType' => 'DOCUMENT',
+            'type' => 'DOCUMENT',
             'url'=> '/documentos/ponderaciones.pdf',
             'description' =>'ponderaciones psa'
         ]);
@@ -47,7 +47,7 @@ class InfoTableSeeder extends Seeder
         DB::table('infos')->insert([
             'date' => '2016-01-01',
             'title'=> 'coordinadores banco de preguntas',
-            'infoType' => 'DOCUMENT',
+            'type' => 'DOCUMENT',
             'url'=> '/documentos/coordinadores.pdf',
             'description' =>'coordinadores psa banco de preguntas'
         ]);
@@ -55,16 +55,10 @@ class InfoTableSeeder extends Seeder
         DB::table('infos')->insert([
             'date' => '2016-01-01',
             'title'=> 'plano ciudad universitaria',
-            'infoType' => 'IMAGE',
+            'type' => 'IMAGE',
             'url'=> '/documentos/plano.jpeg',
             'description' =>'plano ciudad universitaria'
-        ]);*/
-        DB::table('infos')->insert([
-            'date' => '2016-01-01',
-            'title'=> 'prueba',
-            'infoType' => 'DOCUMENT',
-            'url'=> '/documentos/jk.pdf',
-            'description' =>'prueba'
         ]);
+        
     }
 }

@@ -37,9 +37,9 @@ class ManagementController extends Controller
             )
         ");*/
         $infos  = DB::table('infos')
-            ->join('componentsinfo','infos.id','=','componentsinfo.info_id')
-            ->join('components','componentsinfo.component_id','=','components.id')
-            ->where('components.typeComponent', '=','MANAGEMENT')
+            ->join('component_info','infos.id','=','component_info.info_id')
+            ->join('components','component_info.component_id','=','components.id')
+            ->where('components.type', '=','MANAGEMENT')
             ->select('infos.*')
             ->get();
         return new JsonResponse($infos);
