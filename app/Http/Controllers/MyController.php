@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\JsonResponse;
+use App\Exam;
 
 class MyController extends Controller
 {
@@ -159,5 +160,27 @@ class MyController extends Controller
             ->where('options.question_id', '=', $id)
             ->get();
         return new JsonResponse($answers);
+    }
+
+    public function storeExam($candidate_id, $area_id) {
+        date_default_timezone_set('America/La_Paz');
+        $currentDate = date('Y-m-d');
+        $exam = Exam::create([
+            'area_id'       =>  $area_id,
+            'candidate_id'  =>  $candidate_id,
+            'date'          =>  $currentDate
+        ]);
+
+        return $exam;
+    }
+
+    public function areaofexam($exam_id) {
+        $area_id_array = DB::table('exams')
+            ->select('exams.area_id')
+            ->where('exams.id', '=', $exam_id)
+            ->get();
+
+        $area_id = $area_id_array[0];
+        return new JsonResponse($area_id);
     }
 }

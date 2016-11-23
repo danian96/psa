@@ -21,7 +21,7 @@ psaApp.config(['$routeProvider', function($routeProvider) {
         controller  :   'SelectAreaController'
     }).
 
-    when('/exam/:areaID', {
+    when('/exam/:examID', {
         templateUrl :   'partials/exam.html',
         controller  :   'ExamController'
     }).

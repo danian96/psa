@@ -40,3 +40,7 @@ Route::get('subjectsfromarea/{area}', 'MyController@subjectsfromarea');
 Route::get('questionsfromarea/{area}', 'MyController@questionsfromarea');
 
 Route::get('questionsforexam/{area}', 'MyController@questionsforexam');
+
+Route::get('createexam/{candidate_id}/{area_id}', 'MyController@storeExam');
+
+Route::get('areaofexam/{exam_id}', 'MyController@areaofexam');

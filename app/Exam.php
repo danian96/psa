@@ -9,7 +9,7 @@ class Exam extends Model
     //
     protected $table = "exams";
     protected $primaryKey = 'id';
-    protected $fillable = [''];
+    protected $fillable = ['area_id', 'candidate_id', 'date'];
 
 
     public function candidate()
