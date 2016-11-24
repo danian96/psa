@@ -30,6 +30,9 @@ Psa.config(function($routeProvider) {
             templateUrl : 'app/info/info.template.html',
             controller  : 'infoController'
         })
+        .when('/mapa', {
+            templateUrl : 'app/mapa/mapa.template.html',
+        })
         .otherwise({
             redirectTo: '/'
         });

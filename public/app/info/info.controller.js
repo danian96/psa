@@ -9,7 +9,5 @@ Psa.controller('infoController', function infoController($scope, $http, $locatio
         .success(function(response) {
             $scope.infos = response;
             console.log($scope.infos);
-
-
         });
 });
