@@ -31,6 +31,7 @@
     <!-- PAGE LEVEL SCRIPTS -->
     <link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/color_scheme/blue.css" rel="stylesheet" type="text/css" id="color_scheme" />
+    <sty
 </head>
 
 <!--
@@ -141,7 +142,7 @@
 
 
                 <!-- Logo -->
-                <a class="logo pull-left" href="www.uagrm.edu.bo">
+                <a class="logo pull-left" href="#/">
                     <img src="assets/images/uagrm.png" alt="" />
                 </a>
 
@@ -188,8 +189,7 @@
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li><a href="#/rector">RECTOR Y VICERECTOR</a></li>
-                                            <li><a href="#/decanos">DECANOS Y VICEDECANOS</a></li>
-                                            <li><a href="#/directores">DIRECTORES DE CARRERA</a></li>
+                                            <li><a href="#/autoridades">AUTORIDADES UNIVERSITARIAS</a></li>
 
                                         </ul>
                                     </li>
@@ -259,7 +259,7 @@
 
 
 <!-- SCROLL TO TOP -->
-<a href="#" id="toTop"></a>
+<a ng-href="##" id="toTop"></a>
 
 
 <!-- PRELOADER -->

@@ -29,7 +29,7 @@
     <link href="assets/css/color_scheme/blue.css" rel="stylesheet" type="text/css" id="color_scheme" />
     <style>
         #map {
-            height: 400px;
+            height: 150px;
             width: 100%;
         }
     </style>
@@ -475,20 +475,26 @@
 
             <!-- col #2 -->
             <div class="col-md-4">
-                <h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
-
+                <h3 class="letter-spacing-1"></h3>
+                <div id="map"></div>
+                <script>
+                    function initMap() {
+                        var uluru = {lat: -17.7754854, lng: -63.1945087};
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 17,
+                            center: uluru
+                        });
+                        var marker = new google.maps.Marker({
+                            position: uluru,
+                            map: map
+                        });
+                    }
+                </script>
+                <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYTIBsWMp8865X12hUVwQH7kUbnzrE1Wk&callback=initMap">
+                </script>
                 <!-- Newsletter Form -->
-                <p align="justify">Subscribe to Our Newsletter to get Important News & Offers</p>
-
-                <form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                        <input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
-                        <span class="input-group-btn">
-										<button class="btn btn-success" type="submit">Subscribe</button>
-									</span>
-                    </div>
-                </form>
+                <p align="justify"><small>Donde nos ubicamos </small></p>
                 <!-- /Newsletter Form -->
 
 
@@ -510,6 +516,7 @@
             &copy; TODOS LOS DERECHOS RESERVADOS U.A.G.R.M
         </div>
     </div>
+
 
 </footer>
 <!-- /FOOTER -->

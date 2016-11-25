@@ -33,6 +33,12 @@ Psa.config(function($routeProvider) {
         .when('/mapa', {
             templateUrl : 'app/mapa/mapa.template.html',
         })
+        .when('/rector', {
+            templateUrl : 'app/rectorvice/rectorvice.template.html',
+        })
+        .when('/autoridades', {
+            templateUrl : 'app/autoridades/autoridades.template.html',
+        })
         .otherwise({
             redirectTo: '/'
         });
