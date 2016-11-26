@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\JsonResponse;
 use App\Exam;
+use App\ExamAnswer;
 
 class MyController extends Controller
 {
@@ -172,6 +173,22 @@ class MyController extends Controller
         ]);
 
         return $exam;
+    }
+
+    public function storeExamAnswer($exam_id, $question_id, $option_id) {
+        if ($option_id == 0) {
+            ExamAnswer::insert([
+                'exam_id'       =>  $exam_id,
+                'question_id'   =>  $question_id,
+                'option_id'     =>  null
+            ]);
+        } else {
+            ExamAnswer::insert([
+                'exam_id'       =>  $exam_id,
+                'question_id'   =>  $question_id,
+                'option_id'     =>  $option_id
+            ]);
+        }
     }
 
     public function areaofexam($exam_id) {

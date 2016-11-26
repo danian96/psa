@@ -28,8 +28,10 @@ class Question extends Model
     {
         return $this->hasMany('App\PracticeAnswer');
     }
+    /*
     public function exam()
     {
         return $this->belongsTo('App\Exam');
     }
+    */
 }

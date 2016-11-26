@@ -44,3 +44,5 @@ Route::get('questionsforexam/{area}', 'MyController@questionsforexam');
 Route::get('createexam/{candidate_id}/{area_id}', 'MyController@storeExam');
 
 Route::get('areaofexam/{exam_id}', 'MyController@areaofexam');
+
+Route::post('storeexamanswer/{exam_id}/{question_id}/{option_id}', 'MyController@storeExamAnswer');

@@ -9,17 +9,19 @@
 
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="bower_components/flipclock/compiled/flipclock.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="bower_components/flipclock/compiled/flipclock.js"></script>
+
+
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/lodash/lodash.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
     <script src="bower_components/restangular/dist/restangular.min.js"></script>
-
-    <!--
-    <script src = "../../public/js/app.js"></script>
-    <script src = "../../public/js/controllers.js"></script>
-    <script src = "../../public/js/services.js"></script>
-    -->
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.min.js"></script>
 
     <script src = "/js/app.js"></script>
     <script src = "/js/controllers.js"></script>
