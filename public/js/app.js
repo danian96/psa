@@ -26,7 +26,7 @@ psaApp.config(['$routeProvider', function($routeProvider) {
         controller  :   'ExamController'
     }).
 
-    when('/finished', {
+    when('/finished/:examID', {
         templateUrl :   'partials/finished.html',
         controller  :   'FinishedController'
     }).

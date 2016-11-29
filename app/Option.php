@@ -9,6 +9,7 @@ class Option extends Model
     //
     protected $table = "options";
     protected $primaryKey = 'id';
+    protected $fillable = ['id', 'code', 'text', 'answer', 'question_id'];
 
     public function examanswer()
     {

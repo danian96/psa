@@ -13,33 +13,38 @@ class AreasTableSeeder extends Seeder
     {
 
         DB::table('areas')->insert([
-            'component_id' => '2',     // valor absurdo
+            'id'    =>      100,
+            'component_id' => '2',
             'code' => 'A-100',
-            'name' => 'Area 100'
+            'name' => 'TECNOLOGIA'
         ]);
 
         DB::table('areas')->insert([
-            'component_id' => '3',     // valor absurdo
+            'id'    =>      200,
+            'component_id' => '3',
             'code' => 'A-200',
-            'name' => 'Area 200'
+            'name' => 'BIO-AGROPECUARIA'
         ]);
 
         DB::table('areas')->insert([
-            'component_id' => '4',     // valor absurdo
+            'id'    =>      300,
+            'component_id' => '4',
             'code' => 'A-300',
-            'name' => 'Area 300'
+            'name' => 'ECONOMICAS'
         ]);
 
         DB::table('areas')->insert([
-            'component_id' => '5',     // valor absurdo
+            'id'    =>      400,
+            'component_id' => '5',
             'code' => 'A-400',
-            'name' => 'Area 400'
+            'name' => 'HUMANIDADES'
         ]);
 
         DB::table('areas')->insert([
-            'component_id' => '6',     // valor absurdo
+            'id'    =>      501,
+            'component_id' => '6',
             'code' => 'A-501',
-            'name' => 'Area 501'
+            'name' => 'CIENCIAS DE LA COMPUTACION'
         ]);
 
     }

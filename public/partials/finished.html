@@ -1,1 +1,21 @@
-<p>finished screen</p>
+
+<div class="row">
+    <br>
+
+        <h2>Gracias por dar nuestro examen, obtuviste {{aciertos}} aciertos</h2>
+
+        <h3>Tus respuestas:</h3>
+
+        <div data-ng-repeat="i in [0, 1, 2, 3]">
+            <h4>{{getSubjectName(i)}}</h4>
+            <div class="btn-group" data-ng-repeat = "j in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]">
+                <button type="button" class="btn btn-success form-control" ng-disabled="isDisabled(i * 10 + j)"> {{i * 10 + j + 1}}</button>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <br><button type="button" class="btn btn-success form-control" ng-click="finish()">Ir a la pantalla de inicio</button></br>
+        </div>
+
+    </div>
+</div>

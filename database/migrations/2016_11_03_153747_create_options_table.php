@@ -16,8 +16,8 @@ class CreateOptionsTable extends Migration
         Schema::create('options', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code');
-            $table->string('text');
-            $table->string('image')->nullable();
+            $table->text('text');
+            $table->text('image')->nullable();
             $table->boolean('answer');
 
             $table->integer('question_id')->unsigned();

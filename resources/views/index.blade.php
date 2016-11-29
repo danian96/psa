@@ -16,7 +16,7 @@
 
 
     <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/lodash/lodash.min.js"></script>
+    <!--<script src="bower_components/lodash/lodash.min.js"></script>-->
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
     <script src="bower_components/restangular/dist/restangular.min.js"></script>
@@ -25,7 +25,7 @@
 
     <script src = "/js/app.js"></script>
     <script src = "/js/controllers.js"></script>
-    <script src = "/public/js/services.js"></script>
+    <script src = "/js/services.js"></script>
 
 
     <style>
@@ -63,7 +63,7 @@
     <!-- Load Javascript Libraries (AngularJS, JQuery, Bootstrap) -->
     <script src="<?= asset('js/angular/angular.min.js') ?>"></script>
     <script src="<?= asset('js/angular/angular-route.min.js') ?>"></script>
-    <script src="<?= asset('js/jquery.min.js') ?>"></script>
+    <script src="<?= asset('js/jquery/jquery.min.js') ?>"></script>
     <script src="<?= asset('js/bootstrap.min.js') ?>"></script>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Area;
+use App\AreaSubject;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-class AreaController extends Controller
+class AreaSubjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class AreaController extends Controller
      */
     public function index()
     {
-        return new JsonResponse(Area::all());
+        return new JsonResponse(AreaSubject::all());
     }
 
     /**

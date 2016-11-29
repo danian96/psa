@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Faculty;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class FacultyController extends Controller
 {
@@ -14,7 +15,7 @@ class FacultyController extends Controller
      */
     public function index()
     {
-        dd(Faculty::all());
+        return new JsonResponse(Faculty::all());
     }
 
     /**

@@ -2,11 +2,70 @@
 
 var psaAppControllers = angular.module('psaAppControllers', ['ngCookies', 'ngStorage']);
 
-psaAppControllers.controller('MainController', ['$scope', '$location', function($scope, $location) {
+psaAppControllers.controller('MainController', ['$scope', '$location', '$http', function($scope, $location, $http) {
     $scope.enter = function() {
         $location.path('/selectarea');
         return '/selectarea';
+    };
+    
+    $scope.saveFaculties = function() {
+        $http.get("http://bibosi.uagrm.edu.bo/simulador/oferta/facultades").success(function (response) {
+            var faculties = response;
+            var faculty;
+            for (var i = 0; i < faculties.length; i++) {
+                faculty = faculties[i];
+                $http.post("http://localhost:8000/api/storefaculty/" + faculty.id + "/" + faculty.id_area + "/"  + faculty.nombre);
+            }
+        });
+    };
+    
+    $scope.saveSubjects = function() {
+        $http.get('http://localhost:8000/api/area').success(function (response) {
+            var areas = response;
+            var area;
+            for (var i = 0; i < areas.length; i++) {
+                area = areas[i];
+                $http.get('http://bibosi.uagrm.edu.bo/simulador/oferta/materias/' + area.id).success(function (respuesta) {
+                    var subjects = respuesta;
+                    var subject;
+                    for (var j = 0; j < subjects.length; j++) {
+                        subject = subjects[j];
+                        $http.post("http://localhost:8000/api/storesubject/" + subject.id + "/" + subject.id_area
+                            + '/' + subject.sigla + '/' + subject.nombre);
+                    }
+                });
+            }
+        });
     }
+
+    $scope.saveQuestions = function() {
+        $http.get('http://localhost:8000/api/areasubject').success(function (response) {
+            var array = response;
+            var arsub;
+            //for (var i = 0; i < array.length; i++) {
+                arsub = array[0];
+                console.log(arsub);
+                $http.get('http://bibosi.uagrm.edu.bo/simulador/prueba/practica/' + arsub.subject_id + '/20').success(function (respuesta) {
+                    var questions = respuesta;
+                    var question;
+                    for (var j = 0; j < questions.length; j++) {
+                        question = questions[j];
+                        $http.post('http://localhost:8000/api/storequestion/' + question.id + '/' + question.texto + '/'
+                            + arsub.area_id + '/' + question.id_materia).success(function (cualquierCosa) {
+                            var options = question.opciones;
+                            var option;
+                            for (var k = 0; k < options.length; k++) {
+                                option = options[k];
+                                $http.post('http://localhost:8000/api/storeoption/' + option.id + '/' + option.id_pregunta + '/' +
+                                    option.texto + '/' + option.correcta);
+                            }
+                        })
+                    }
+                });
+            //}
+        })
+    }
+    
 }]);
 
 psaAppControllers.controller('ExamController', ['$scope', '$http', '$location', '$routeParams', '$cookies', '$sessionStorage',
@@ -92,6 +151,8 @@ function($scope, $http, $location, $routeParams, $cookies, $sessionStorage) {
         console.log('refreshed');
         $scope.loadAll();
         $scope.index = $sessionStorage.index;
+        $scope.currentQuestion = $sessionStorage.currentQuestion;
+        $scope.currentAnswers = $sessionStorage.currentAnswers;
         $scope.selected = $scope.respuestas[$scope.index];
         console.log($scope.index);
         console.log($sessionStorage.index);
@@ -107,9 +168,7 @@ function($scope, $http, $location, $routeParams, $cookies, $sessionStorage) {
                 $scope.requestResponse = response;
                 $sessionStorage.requestResponse = $scope.requestResponse;
 
-                console.log($scope.requestResponse);
                 $sessionStorage.requestResponse = $scope.requestResponse;
-                console.log($sessionStorage.requestResponse);
 
                 $scope.questions = $scope.requestResponse[0];
                 $sessionStorage.questions = $scope.questions;
@@ -138,7 +197,6 @@ function($scope, $http, $location, $routeParams, $cookies, $sessionStorage) {
                 $scope.initialTime = new Date().getTime();
                 $sessionStorage.initialTime = $scope.initialTime;
             }) .error(function(response) {
-                //console.log(response);
                 console.log('No se obtuvieron las preguntas para el examen');
             });
 
@@ -146,17 +204,16 @@ function($scope, $http, $location, $routeParams, $cookies, $sessionStorage) {
                 $scope.materias = response;
                 $sessionStorage.materias = $scope.materias;
             }) .error(function(response) {
-                //console.log(response);
                 console.log('No se obtuvieron las materias del examen');
             });
         }) .error(function(response) {
-            //console.log(response);
             console.log('no se obtuvo el area_id')
         });
     }
 
     $scope.goToQuestion = function (i) {
         if (i < 0 ||  i > 39) {
+            $scope.respuestas[$scope.index] = $scope.selected;
             console.log('No se puede mi hijo');
         } else {
             $scope.respuestas[$scope.index] = $scope.selected;
@@ -166,6 +223,8 @@ function($scope, $http, $location, $routeParams, $cookies, $sessionStorage) {
             $scope.currentAnswers = $scope.answers[first][second];
             $scope.index = i;
             $sessionStorage.index = $scope.index;
+            $sessionStorage.currentAnswers = $scope.currentAnswers;
+            $sessionStorage.currentQuestion = $scope.currentQuestion;
             $scope.selected = $scope.respuestas[$scope.index];
         }
     };
@@ -192,23 +251,18 @@ function($scope, $http, $location, $routeParams, $cookies, $sessionStorage) {
     };
 
     $scope.finishExam = function() {
-        /**/
         var d = new Date();
         var currentTime = d.getTime();
-        /**/
-        //$scope.tryingFinishTime = new Date().getTime();
-        console.log('initial time = ' + $scope.initialTime);
-        console.log('current time = ' + currentTime);
         if (currentTime > ($scope.initialTime + 3600000)) {
             $scope.saveAnswers();
             $sessionStorage.$reset();
-            $location.path("/");
+            $location.path("/finished/" + $scope.exam_id);
         } else {
             var confirmation = confirm("Are you sure you want to finish the exam?");
             if (confirmation) {
                 $scope.saveAnswers();
                 $sessionStorage.$reset();
-                $location.path("/");
+                $location.path("/finished/" + $scope.exam_id);
             }
         }
     };
@@ -223,7 +277,49 @@ function($scope, $http, $location, $routeParams, $cookies, $sessionStorage) {
 
 }]);
 
-psaAppControllers.controller('FinishedController', ['$scope', '$http', function($scope, $http) {
+psaAppControllers.controller('FinishedController', ['$scope', '$http', '$location', '$routeParams', function($scope, $http, $location,  $routeParams) {
+
+    $scope.exam_id = $routeParams.examID;
+    
+    $scope.cantidadDeAciertos = function() {
+        var c = 0;
+        for (var i = 0; i < $scope.answers.length; i++) {
+            if ($scope.answers[i] == 1) {
+                c++;
+            }
+        }
+        return c;
+    };
+    
+    $http.get("http://localhost:8000/api/answersofexam/" + $scope.exam_id).success(function (response) {
+        $scope.answers = response;
+        console.log($scope.answers);
+        $scope.aciertos = $scope.cantidadDeAciertos();
+        $http.get("http://localhost:8000/api/areaofexam/" + $scope.exam_id).success(function (response) {
+            $scope.area_id = response.area_id;
+            $http.get("http://localhost:8000/api/subjectsfromarea/" + $scope.area_id).success(function (response) {
+                $scope.materias = response;
+            }) .error(function(response) {
+                console.log('No se obtuvieron las materias del examen');
+            });
+        }).error(function (response) {
+            console.log("No se obtuvieron las materias");
+        });
+    }).error(function (response) {
+        console.log("No se obtuvieron las respuestas");
+    });
+
+    $scope.getSubjectName = function($i) {
+        return $scope.materias[$i].name;
+    };
+
+    $scope.finish = function () {
+        $location.path('/');
+    };
+
+    $scope.isDisabled = function (index) {
+        return $scope.answers[index] == 0;
+    }
 
 }]);
 
@@ -249,3 +345,4 @@ psaAppControllers.controller('SelectAreaController', ['$scope', '$http', '$locat
     }
 
 }]);
+

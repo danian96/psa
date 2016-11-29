@@ -27,6 +27,8 @@ Route::resource('component', 'ComponentController');
 
 Route::resource('area', 'AreaController');
 
+Route::resource('areasubject', 'AreaSubjectController');
+
 Route::resource('faculty', 'FacultyController');
 
 Route::get('/optionsfromquestion/{id}', 'MyController@optionsfromquestion');
@@ -45,4 +47,15 @@ Route::get('createexam/{candidate_id}/{area_id}', 'MyController@storeExam');
 
 Route::get('areaofexam/{exam_id}', 'MyController@areaofexam');
 
+Route::get('answersofexam/{exam_id}', 'MyController@getAnswersFromExam');
+
 Route::post('storeexamanswer/{exam_id}/{question_id}/{option_id}', 'MyController@storeExamAnswer');
+
+Route::post('storefaculty/{id}/{id_area}/{nombre}', 'MyController@storeFaculty');
+
+Route::post('storesubject/{id}/{id_area}/{code}/{name}', 'MyController@storeSubject');
+
+Route::post('storequestion/{id}/{text}/{area_id}/{subject_id}', 'MyController@storeQuestion');
+
+Route::post('storeoption/{id}/{question_id}/{text}/{answer}', 'MyController@storeOption');
+

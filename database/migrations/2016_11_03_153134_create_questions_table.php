@@ -17,8 +17,8 @@ class CreateQuestionsTable extends Migration
             $table->increments('id');
             $table->string('code');
             $table->enum('questionType', ['OPENED', 'CLOSED']);
-            $table->string('text');
-            $table->string('image')->nullable();
+            $table->text('text');
+            $table->text('image')->nullable();
 
             $table->integer('management_id')->unsigned();
             $table->integer('area_id')->unsigned();

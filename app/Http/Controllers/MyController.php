@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\AreaSubject;
+use App\Component;
+use App\Faculty;
+use App\Option;
+use App\Question;
+use App\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\JsonResponse;
@@ -200,4 +206,94 @@ class MyController extends Controller
         $area_id = $area_id_array[0];
         return new JsonResponse($area_id);
     }
+
+    public function storefaculty($id, $area_id, $name) {
+        Component::insert([
+            'id'    =>  20 + $id,
+            'type' => 'FACULTY'
+        ]);
+        Faculty::insert([
+            'id'            =>  $id,
+            'area_id'       =>  $area_id,
+            'code'          =>  'faculty'.$id,
+            'name'          =>  $name,
+            'component_id'  =>  $id + 20
+        ]);
+    }
+
+    public function storeSubject($id, $area_id, $code, $name) {
+        Subject::insert([
+            'id'            =>  $id,
+            'code'          =>  $code,
+            'name'          =>  $name
+        ]);
+        AreaSubject::insert([
+            'area_id'       =>  $area_id,
+            'subject_id'    =>  $id
+        ]);
+    }
+
+    public function storeQuestion($id, $text, $area_id, $subject_id) {
+        Question::insert([
+            'id'            =>  $id,
+            'code'          =>  'questionCode'.$id,
+            'questionType'  =>  'CLOSED',
+            'text'          =>  $text,
+            'management_id' =>  '1',
+            'area_id'       =>  $area_id,
+            'subject_id'    =>  $subject_id
+        ]);
+    }
+
+    public function storeOption($id, $question_id, $text, $answer) {
+        Option::insert([
+            'id'            =>  $id,
+            'code'          =>  'optionCode'.$id,
+            'text'          =>  $text,
+            'answer'        =>  $answer,
+            'question_id'   =>  $question_id
+        ]);
+    }
+
+    public function getAnswersFromExam($id) {
+        $answers = DB::table('options')
+            ->join('examsanswer', 'examsanswer.option_id', '=', 'options.id')
+            ->where('examsanswer.exam_id', '=', $id)
+            ->select('examsanswer.id', 'options.answer')
+            ->get();
+
+        $others = DB::table('examsanswer')
+            ->where('examsanswer.exam_id', '=', $id)
+            ->where('examsanswer.option_id', '=', NULL)
+            ->select('examsanswer.id')
+            ->get();
+
+        $result = array();
+        $i = 0;
+        $j = 0;
+        foreach (range(1, 40) as $k) {
+            if ($i == sizeof($answers)) {
+                array_push($result, 0);
+                $j++;
+            } else {
+                if ($j == sizeof($others)) {
+                    array_push($result, $answers[$i]->answer);
+                    $i++;
+                } else {
+                    $idAnswer = $answers[$i]->id;
+                    $idOther = $others[$j]->id;
+                    if ($idAnswer < $idOther) {
+                        array_push($result, $answers[$i]->answer);
+                        $i++;
+                    } else {
+                        array_push($result, 0);
+                        $j++;
+                    }
+                }
+            }
+        }
+        return new JsonResponse($result);
+
+    }
+
 }

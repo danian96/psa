@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Subject extends Model
 {
     //
-    protected $table = "subject";
+    protected $table = "subjects";
     protected $primaryKey = 'id';
+
+    protected $fillable = ['id', 'name', 'area_id', 'code'];
+
 
     public function practice()
     {

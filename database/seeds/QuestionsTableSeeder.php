@@ -14,22 +14,23 @@ class QuestionsTableSeeder extends Seeder
         // area 100 mate
         foreach (range(1, 20) as $index) {
             DB::table('questions')->insert ([
-                'code'  =>  'code'.$index,
+                'code'  =>  'code'.($index),
                 'questionType'  =>  'CLOSED',
                 'text'  =>  'Este es el texto de la pregunta '.$index.' y es una pregunta CLOSED',
                 'management_id' =>  '1',
-                'area_id'       =>  '1',
-                'subject_id'    =>  '1'
+                'area_id'       =>  '100',
+                'subject_id'    =>  '147'
             ]);
         }
-        foreach (range(1, 10) as $index) {
+        foreach (range(1, 5) as $index) {
             DB::table('questions')->insert ([
-                'code'  =>  'code'.($index + 20),
-                'questionType'  =>  'OPENED',
-                'text'  =>  'Este es el texto de la pregunta '.($index + 20).' y es una pregunta OPENED',
+                'code'  =>  'code'.$index,
+                'questionType'  =>  'CLOSED',
+                'text'  =>  'Este es el texto de la pregunta '.$index.' y es una pregunta CLOSED',
+                'image'         =>  'assets/images/questionImg'.$index.'jpg',
                 'management_id' =>  '1',
-                'area_id'       =>  '1',
-                'subject_id'    =>  '1'
+                'area_id'       =>  '100',
+                'subject_id'    =>  '147'
             ]);
         }
 
@@ -40,18 +41,19 @@ class QuestionsTableSeeder extends Seeder
                 'questionType'  =>  'CLOSED',
                 'text'  =>  'Este es el texto de la pregunta '.(30 + $index).' y es una pregunta CLOSED',
                 'management_id' =>  '1',
-                'area_id'       =>  '1',
-                'subject_id'    =>  '2'
+                'area_id'       =>  '100',
+                'subject_id'    =>  '145'
             ]);
         }
-        foreach (range(1, 10) as $index) {
+        foreach (range(1, 5) as $index) {
             DB::table('questions')->insert ([
-                'code'  =>  'code'.($index + 50),
-                'questionType'  =>  'OPENED',
-                'text'  =>  'Este es el texto de la pregunta '.($index + 50).' y es una pregunta OPENED',
+                'code'  =>  'code'.$index,
+                'questionType'  =>  'CLOSED',
+                'text'  =>  'Este es el texto de la pregunta '.$index.' y es una pregunta CLOSED',
+                'image'         =>  'assets/images/questionImg'.$index.'jpg',
                 'management_id' =>  '1',
-                'area_id'       =>  '1',
-                'subject_id'    =>  '2'
+                'area_id'       =>  '100',
+                'subject_id'    =>  '145'
             ]);
         }
 
@@ -62,18 +64,19 @@ class QuestionsTableSeeder extends Seeder
                 'questionType'  =>  'CLOSED',
                 'text'  =>  'Este es el texto de la pregunta '.(60 + $index).' y es una pregunta CLOSED',
                 'management_id' =>  '1',
-                'area_id'       =>  '1',
-                'subject_id'    =>  '3'
+                'area_id'       =>  '100',
+                'subject_id'    =>  '148'
             ]);
         }
-        foreach (range(1, 10) as $index) {
+        foreach (range(1, 5) as $index) {
             DB::table('questions')->insert ([
-                'code'  =>  'code'.($index + 80),
-                'questionType'  =>  'OPENED',
-                'text'  =>  'Este es el texto de la pregunta '.($index + 80).' y es una pregunta OPENED',
+                'code'  =>  'code'.$index,
+                'questionType'  =>  'CLOSED',
+                'text'  =>  'Este es el texto de la pregunta '.$index.' y es una pregunta CLOSED',
+                'image'         =>  'assets/images/questionImg'.$index.'jpg',
                 'management_id' =>  '1',
-                'area_id'       =>  '1',
-                'subject_id'    =>  '3'
+                'area_id'       =>  '100',
+                'subject_id'    =>  '148'
             ]);
         }
 
@@ -84,18 +87,19 @@ class QuestionsTableSeeder extends Seeder
                 'questionType'  =>  'CLOSED',
                 'text'  =>  'Este es el texto de la pregunta '.(90 + $index).' y es una pregunta CLOSED',
                 'management_id' =>  '1',
-                'area_id'       =>  '1',
-                'subject_id'    =>  '4'
+                'area_id'       =>  '100',
+                'subject_id'    =>  '146'
             ]);
         }
-        foreach (range(1, 10) as $index) {
+        foreach (range(1, 5) as $index) {
             DB::table('questions')->insert ([
-                'code'  =>  'code'.($index + 110),
-                'questionType'  =>  'OPENED',
-                'text'  =>  'Este es el texto de la pregunta '.($index + 110).' y es una pregunta OPENED',
+                'code'  =>  'code'.$index,
+                'questionType'  =>  'CLOSED',
+                'text'  =>  'Este es el texto de la pregunta '.$index.' y es una pregunta CLOSED',
+                'image'         =>  'assets/images/questionImg'.$index.'jpg',
                 'management_id' =>  '1',
-                'area_id'       =>  '1',
-                'subject_id'    =>  '4'
+                'area_id'       =>  '100',
+                'subject_id'    =>  '146'
             ]);
         }
 
@@ -106,18 +110,19 @@ class QuestionsTableSeeder extends Seeder
                 'questionType'  =>  'CLOSED',
                 'text'  =>  'Este es el texto de la pregunta '.(120 + $index).' y es una pregunta CLOSED',
                 'management_id' =>  '1',
-                'area_id'       =>  '5',
-                'subject_id'    =>  '5'
+                'area_id'       =>  '501',
+                'subject_id'    =>  '163'
             ]);
         }
-        foreach (range(1, 10) as $index) {
+        foreach (range(1, 5) as $index) {
             DB::table('questions')->insert ([
-                'code'  =>  'code'.($index + 140),
-                'questionType'  =>  'OPENED',
-                'text'  =>  'Este es el texto de la pregunta '.($index + 140).' y es una pregunta OPENED',
+                'code'  =>  'code'.$index,
+                'questionType'  =>  'CLOSED',
+                'text'  =>  'Este es el texto de la pregunta '.$index.' y es una pregunta CLOSED',
+                'image'         =>  'assets/images/questionImg'.$index.'jpg',
                 'management_id' =>  '1',
-                'area_id'       =>  '5',
-                'subject_id'    =>  '5'
+                'area_id'       =>  '501',
+                'subject_id'    =>  '163'
             ]);
         }
 
@@ -128,18 +133,19 @@ class QuestionsTableSeeder extends Seeder
                 'questionType'  =>  'CLOSED',
                 'text'  =>  'Este es el texto de la pregunta '.(150 + $index).' y es una pregunta CLOSED',
                 'management_id' =>  '1',
-                'area_id'       =>  '5',
-                'subject_id'    =>  '6'
+                'area_id'       =>  '501',
+                'subject_id'    =>  '162'
             ]);
         }
-        foreach (range(1, 10) as $index) {
+        foreach (range(1, 5) as $index) {
             DB::table('questions')->insert ([
-                'code'  =>  'code'.($index + 170),
-                'questionType'  =>  'OPENED',
-                'text'  =>  'Este es el texto de la pregunta '.($index + 170).' y es una pregunta OPENED',
+                'code'  =>  'code'.$index,
+                'questionType'  =>  'CLOSED',
+                'text'  =>  'Este es el texto de la pregunta '.$index.' y es una pregunta CLOSED',
+                'image'         =>  'assets/images/questionImg'.$index.'jpg',
                 'management_id' =>  '1',
-                'area_id'       =>  '5',
-                'subject_id'    =>  '6'
+                'area_id'       =>  '501',
+                'subject_id'    =>  '162'
             ]);
         }
 
@@ -150,18 +156,19 @@ class QuestionsTableSeeder extends Seeder
                 'questionType'  =>  'CLOSED',
                 'text'  =>  'Este es el texto de la pregunta '.(180 + $index).' y es una pregunta CLOSED',
                 'management_id' =>  '1',
-                'area_id'       =>  '5',
-                'subject_id'    =>  '1'
+                'area_id'       =>  '501',
+                'subject_id'    =>  '164'
             ]);
         }
-        foreach (range(1, 10) as $index) {
+        foreach (range(1, 5) as $index) {
             DB::table('questions')->insert ([
-                'code'  =>  'code'.($index + 200),
-                'questionType'  =>  'OPENED',
-                'text'  =>  'Este es el texto de la pregunta '.($index + 200).' y es una pregunta OPENED',
+                'code'  =>  'code'.$index,
+                'questionType'  =>  'CLOSED',
+                'text'  =>  'Este es el texto de la pregunta '.$index.' y es una pregunta CLOSED',
+                'image'         =>  'assets/images/questionImg'.$index.'jpg',
                 'management_id' =>  '1',
-                'area_id'       =>  '5',
-                'subject_id'    =>  '1'
+                'area_id'       =>  '501',
+                'subject_id'    =>  '164'
             ]);
         }
 
@@ -172,18 +179,19 @@ class QuestionsTableSeeder extends Seeder
                 'questionType'  =>  'CLOSED',
                 'text'  =>  'Este es el texto de la pregunta '.(210 + $index).' y es una pregunta CLOSED',
                 'management_id' =>  '1',
-                'area_id'       =>  '5',
-                'subject_id'    =>  '2'
+                'area_id'       =>  '501',
+                'subject_id'    =>  '161'
             ]);
         }
-        foreach (range(1, 10) as $index) {
+        foreach (range(1, 5) as $index) {
             DB::table('questions')->insert ([
-                'code'  =>  'code'.($index + 230),
-                'questionType'  =>  'OPENED',
-                'text'  =>  'Este es el texto de la pregunta '.($index + 230).' y es una pregunta OPENED',
+                'code'  =>  'code'.$index,
+                'questionType'  =>  'CLOSED',
+                'text'  =>  'Este es el texto de la pregunta '.$index.' y es una pregunta CLOSED',
+                'image'         =>  'assets/images/questionImg'.$index.'jpg',
                 'management_id' =>  '1',
-                'area_id'       =>  '5',
-                'subject_id'    =>  '2'
+                'area_id'       =>  '501',
+                'subject_id'    =>  '161'
             ]);
         }
 
